@@ -1,4 +1,4 @@
-module github.com/lordtor/go-logging.git
+module github.com/lordtor/go-logging
 
 go 1.17
 
