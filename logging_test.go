@@ -20,6 +20,10 @@ func Test_convertStringToLogLevel(t *testing.T) {
 		{"Info", args{"info"}, logrus.InfoLevel},
 		{"Warn", args{"warn"}, logrus.WarnLevel},
 		{"Default", args{""}, logrus.InfoLevel},
+		{"Panic", args{"panic"}, logrus.PanicLevel},
+		{"Fatal", args{"fatal"}, logrus.FatalLevel},
+		{"Error", args{"error"}, logrus.ErrorLevel},
+		{"Trace", args{"trace"}, logrus.TraceLevel},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

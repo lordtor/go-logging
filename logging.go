@@ -2,6 +2,7 @@ package go_logging
 
 import (
 	"os"
+	"strings"
 
 	logrus "github.com/sirupsen/logrus"
 )
@@ -17,13 +18,19 @@ func init() {
 
 //=============log=========================
 func convertStringToLogLevel(logLevel string) logrus.Level {
-	switch logLevel {
+	switch strings.ToLower(logLevel) {
 	case "debug":
 		return logrus.DebugLevel
 	case "info":
 		return logrus.InfoLevel
 	case "warn":
 		return logrus.WarnLevel
+	case "panic":
+		return logrus.PanicLevel
+	case "fatal":
+		return logrus.FatalLevel
+	case "trace":
+		return logrus.TraceLevel
 	default:
 		return logrus.InfoLevel
 	}
